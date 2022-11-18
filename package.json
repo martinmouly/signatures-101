@@ -2,7 +2,8 @@
   "devDependencies": {
     "@openzeppelin/contracts": "^3.4.1",
     "@supercharge/strings": "^1.25.0",
-    "@truffle/hdwallet-provider": "^2.0.3",
+    "@truffle/hdwallet-provider": "^2.1.1",
+    "hardhat": "^2.12.2",
     "truffle-plugin-verify": "^0.5.21"
   }
 }

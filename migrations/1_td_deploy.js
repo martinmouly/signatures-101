@@ -2,14 +2,16 @@
 var TDErc20 = artifacts.require("ERC20TD.sol");
 var evaluator = artifacts.require("Evaluator.sol");
 var BouncerProxy = artifacts.require("BouncerProxy.sol");
+var nft=artifacts.require("MyNFT.sol")
 
 
 module.exports = (deployer, network, accounts) => {
     deployer.then(async () => {
-        await deployTDToken(deployer, network, accounts); 
+        /*await deployTDToken(deployer, network, accounts); 
         await deployEvaluator(deployer, network, accounts); 
         await setPermissionsAndRandomValues(deployer, network, accounts); 
-        await deployRecap(deployer, network, accounts); 
+        await deployRecap(deployer, network, accounts); */
+		await deployNFT(deployer, network, accounts);
     });
 };
 
@@ -52,6 +54,11 @@ async function deployRecap(deployer, network, accounts) {
 	console.log("TDToken " + TDToken.address)
 	console.log("bouncerProxy reference " + bouncerProxy.address)
 	console.log("Evaluator " + Evaluator.address)
+}
+
+async function deployNFT(deployer, network, accounts) {
+	NFT = await nft.new()
+	NFT.mintToken()
 }
 
 
